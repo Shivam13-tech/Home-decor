@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+* {
+    margin: 0;
+    padding: 0;
   }
+
+.Single-product{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Single-product-image{
+    width: 100%;
+    height: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.Single-product-image-container{
+    width: 22vw;
+    height: 25vh;
+    margin: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Single-product-button{
+    color: white;
+    background-color: #6CB26C;
+    border: 1px solid;
+    width: 7vw;
+    height: 4vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.Single-product-options{
+    display: flex;
+}
+
+.Single-product-price-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
+.Single-product-review-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Related-product-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+
+.Single-related-products-image{
+    width: 100%;
+    height: 100%;
+}
+
+.Single-related-products-container{
+    width: 15vw;
+    height: 25vh;
+    margin: 30px;
+}
+
+.details-image{
+    width: 100%;
+    height: 100%;
+}
+
+.details-image-container{
+    width: 35vw;
+    height: 25vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
