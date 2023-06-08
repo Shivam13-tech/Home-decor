@@ -106,3 +106,38 @@
     margin-top: 1vh;
     margin-bottom: 1vh;
 }
+
+
+/* ----------------------Seller----------*/
+
+.Seller-title{
+    margin: 20px;
+}
+
+.Add-product-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.Add-product-input{
+    width: 15vw;
+    height: 3vh;
+    padding: 10px;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.Add-product-button{
+    width: 7vw;
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.Existing-product-container{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
