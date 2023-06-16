@@ -3,6 +3,8 @@
     padding: 0;
   }
 
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Josefin+Sans:ital,wght@0,300;0,500;1,700&family=Montserrat:ital,wght@1,300&display=swap');
+
 .Single-product{
     display: flex;
     justify-content: center;
@@ -145,8 +147,99 @@
 /* ---------------- Auth ----------- */
 
 .auth-ui{
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #c8ded0;
+    
 }
+
+.form-design{
+    border: 1px solid #c8ded0;
+    width: 20vw;
+    height: 60vh;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.form-input{
+    width: 15vw;
+    height: 5vh;
+    border: none;
+	border-radius: 30px;
+    background-color: #f0f8ff;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding-left: 17px;
+}
+
+.form-button{
+    background-color: #6CB26C;
+    color: white;
+    width: 15vw;
+    height: 5vh;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    border: none;
+	border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-action-button{
+    background-color: #6CB26C;
+    color: white;
+    margin: 1vw;
+    border: none;
+	border-radius: 30px;
+    width: 7vw;
+    height: 4vh;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.form-dropdown{
+    width: 8vw;
+    height: 3vh;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    border: none;
+	border-radius: 30px;
+    padding-left: 10px;
+}
+
+.form-label{
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 1vh;
+}
+
+/* ------------------------- Mobile responsive ---------- */
+
+@media (max-width: 1100px) {
+    .form-design{
+        width: 50vw;
+        height: 45vh;
+    }
+    .form-action-button{
+        width: 20vw;
+        height: 3vh;
+        margin: 2vw;
+    }
+    .form-button{
+        width: 25vw;
+        height: 3vh;
+    }
+    .form-input{
+        width: 35vw;
+        height: 3vh;
+    }
+    .form-dropdown{
+        width: 25vw;
+        height: 3vh;
+    }
+  }
