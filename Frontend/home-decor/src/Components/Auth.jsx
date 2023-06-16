@@ -2,21 +2,12 @@ import React, {useState} from "react";
 
 function Auth(){
     const [login, setLogin] = useState(false)
-
-    function showlogin(){
-        setLogin(true)
-    }
-
-    function showsignup(){
-        setLogin(false)
-    }
-
     return (
         <> 
            <div className="auth-ui">
                 <div>
-                    <button className="form-action-button" onClick={showlogin}>Login</button>
-                    <button className="form-action-button" onClick={showsignup}>Sign up</button>
+                    <button className="form-action-button" onClick={() => setLogin(true)}>Login</button>
+                    <button className="form-action-button" onClick={() => setLogin(false)}>Sign up</button>
                 </div>
                 { !login ? (
                 <div className="form-design">
