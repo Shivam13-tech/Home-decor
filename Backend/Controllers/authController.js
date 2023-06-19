@@ -94,8 +94,7 @@ exports.protect = async function(req,res,next){
             })
         }
 
-        // req.userID = currentUser._id
-        req.user = currentUser
+        req.userID = currentUser._id
         next()
     }
     catch (error) {

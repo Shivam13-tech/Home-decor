@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const User = require('./userModel')
 
 const sellerSchema = new mongoose.Schema({            // Name, price,description,images
     name: {
@@ -16,6 +17,10 @@ const sellerSchema = new mongoose.Schema({            // Name, price,description
     images: {
         type: [String],
         required: [true, "Please provide atleast one image of the product"]  
+    },
+    seller: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User' 
     } 
 })
 

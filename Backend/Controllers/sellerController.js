@@ -33,7 +33,6 @@ exports.uploadimage = upload.array('images', 3)
 exports.resizePhoto = async (req,res,next) => {
     try{
         if(!req.files) return next()
-        console.log("hello")
         req.body.images = []
         await Promise.all(req.files.map(async (file,index) => {
             const filename = `product-${Date.now()}-${index + 1}.jpeg`
@@ -60,6 +59,7 @@ exports.resizePhoto = async (req,res,next) => {
 
 exports.addProduct = async function(req,res,next){
     try {
+        const sellerid = req.userID.toString()
         const { name, price, description } = req.body;
         const images = req.body.images || []; // If no images were uploaded, default to an empty array
     
@@ -69,6 +69,7 @@ exports.addProduct = async function(req,res,next){
           price,
           description,
           images,
+          seller: sellerid
         });
     
         // Save the product to the database
@@ -86,4 +87,65 @@ exports.addProduct = async function(req,res,next){
           error: err.message,
         });
       }
+}
+
+exports.getSellerProduct = async function(req,res,next){
+    try {
+        const sellerid = req.userID.toString()
+        const sellerProduct = await Seller.find({seller: sellerid})
+        res
+            .status(200)
+            .json({
+                status: "Success",
+                Result: sellerProduct
+            })
+    }
+    catch (err) {
+        res.status(500).json({
+          status: 'Failed',
+          message: 'Something went wrong',
+          error: err.message,
+        });
+    }
+}
+
+exports.deleteProduct = async function(req,res,next){
+    try{
+        const id = req.params.id
+        await Seller.findByIdAndDelete(id)
+        res
+            .status(204)
+            .json({
+                status: "Success",
+                message: "Product deleted"
+            })
+    }
+    catch (err) {
+        res.status(500).json({
+          status: 'Failed',
+          message: 'Something went wrong',
+          error: err.message,
+        });
+    }
+}
+
+exports.updateProduct = async function(req,res,next){
+    try{
+        const id = req.params.id
+        console.log(req.body)
+        const data = await Seller.findByIdAndUpdate(id,{$set: req.body},{ new: true })
+        res
+            .status(201)
+            .json({
+                status: "Success",
+                Result: data
+            })
+    }
+    catch (err) {
+        res.status(500).json({
+          status: 'Failed',
+          message: 'Something went wrong',
+          error: err.message,
+        });
+    }
 }
