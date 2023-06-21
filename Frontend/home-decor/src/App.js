@@ -9,8 +9,8 @@ function App() {
     <div className="App">
         {/* <Individual /> */}
         {/* <Home /> */}
-        <Seller />
-        {/* <Auth /> */}
+        {/* <Seller /> */}
+        <Auth />
     </div>
   );
 }
