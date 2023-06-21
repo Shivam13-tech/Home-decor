@@ -59,7 +59,7 @@ exports.resizePhoto = async (req,res,next) => {
 
 exports.addProduct = async function(req,res,next){
     try {
-        const sellerid = req.userID.toString()
+        // const sellerid = req.userID.toString()
         const { name, price, description } = req.body;
         const images = req.body.images || []; // If no images were uploaded, default to an empty array
     
@@ -69,7 +69,7 @@ exports.addProduct = async function(req,res,next){
           price,
           description,
           images,
-          seller: sellerid
+        //   seller: sellerid
         });
     
         // Save the product to the database

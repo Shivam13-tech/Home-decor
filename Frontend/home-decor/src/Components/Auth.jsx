@@ -70,15 +70,15 @@ function Auth(){
                 </div>
                 { !login ? (
                 <div className="form-design">
-                    <label className="form-label" for="signup-name">Enter name:</label>
+                    <label className="form-label" htmlFor="signup-name">Enter name:</label>
                     <input className="form-input" type="text" name="name" value={signupdata.name} onChange={handlesignupinput}/>
-                    <label className="form-label" for="signup-email">Enter email:</label>
+                    <label className="form-label" htmlFor="signup-email">Enter email:</label>
                     <input className="form-input" type="email" name="email" value={signupdata.email} onChange={handlesignupinput}/>
-                    <label className="form-label" for="signup-pass">Enter password:</label>
+                    <label className="form-label" htmlFor="signup-pass">Enter password:</label>
                     <input className="form-input" type="password" name="password" value={signupdata.password} onChange={handlesignupinput}/>
-                    <label className="form-label" for="signup-passconf">Confirm password:</label>
+                    <label className="form-label" htmlFor="signup-passconf">Confirm password:</label>
                     <input className="form-input" type="password" name="confirmPassword" value={signupdata.confirmPassword} onChange={handlesignupinput}/>
-                    <label for="type" className="form-label">Choose your account type</label>
+                    <label htmlFor="type" className="form-label">Choose your account type</label>
                     <select name="type" className="form-dropdown">
                         <option value="Select">Select</option>
                         <option value="Buyer">Buyer</option>
@@ -88,9 +88,9 @@ function Auth(){
                 </div>
                 ) : (
                 <div className="form-design"> 
-                    <lable className="form-label" for="login-email">Enter email:</lable>
+                    <lable className="form-label" htmlFor="login-email">Enter email:</lable>
                     <input className="form-input" type="email" name="email" value={logindata.email} onChange={handlelogininput}/>
-                    <label className="form-label" for="login-pass">Enter password:</label>
+                    <label className="form-label" htmlFor="login-pass">Enter password:</label>
                     <input className="form-input" type="password" name="password" value={logindata.password} onChange={handlelogininput}/>
                     <button className="form-button" onClick={loginformsubmit}>Login</button>
                 </div>

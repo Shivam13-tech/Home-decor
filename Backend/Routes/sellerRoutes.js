@@ -6,7 +6,7 @@ const router = express.Router()
 
 router
     .route('/')
-    .post(authController.protect,sellerController.uploadimage,sellerController.resizePhoto,sellerController.addProduct)
+    .post(sellerController.uploadimage,sellerController.resizePhoto,sellerController.addProduct) //  authController.protect,
     .get(authController.protect,sellerController.getSellerProduct)
    
  router
