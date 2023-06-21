@@ -16,9 +16,9 @@ const createSendToken = (Info,statuscode,res)=>{
     res.cookie('jwt', Token,{
         expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000),
         secure: true,  // So its only shared with HTTPS
-        httpOnly: true // So its only stored and resend not modified in anyway
+        httpOnly: true //  The httpOnly flag is set to true to prevent client-side JavaScript from accessing or modifying the cookie.
     })
-    Info.password = undefined  //so that we dont get the password on token response
+    Info.password = undefined  //so that we dont get the password on token response again after cookie set
     res
         .status(statuscode)
         .json({
