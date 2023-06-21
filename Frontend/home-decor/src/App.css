@@ -89,6 +89,70 @@ body{
 
 /* -------------------- Home ----------------- */
 
+.home-wallpaper-container{
+    position: relative;
+    max-width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+}
+
+.home-wallpaper{
+    width: 100%;
+    height: 100%;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #333333;
+    padding: 20px;
+  }
+  
+  .text-overlay h1 {
+    font-size: 35px;
+    margin-bottom: 10px;
+  }
+  
+  .text-overlay p {
+    font-size: 20px;
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  .home-main-container{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .home-category-container{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5vh;
+    margin-left: 4vw;
+  }
+
+  .home-select-title{
+    color: #333333;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 2vh;
+  }
+
+  .home-categories{
+    background-color: #6CB26C;
+    color: white;
+    width: 15vw;
+    height: 7vh;
+    margin: 1vh;
+    border: none;
+	border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
 .category-container{
     display: flex;
     justify-content: center;
@@ -218,8 +282,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #c8ded0;
-    
+    background-color: #c8ded0;  
 }
 
 .form-design{
