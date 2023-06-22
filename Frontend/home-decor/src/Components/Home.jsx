@@ -1,8 +1,19 @@
 import React from "react"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import Homewallpaper from "../Assets/home-wallpaper.jpg"
 import Category from "../Assets/individual chair.jpg"
 
 function Home(){
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 1,
+        slidesToScroll: 1
+      };
+
     return(
     <>
         <div className="home-wallpaper-container">
@@ -22,32 +33,243 @@ function Home(){
                 <button className="home-categories">Bathroom</button>
             </div>
             <div className="category-container">
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
+                <div className="slider-card">
+                    <div className="slider-card-content"> 
+                        <Slider {...settings}>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                        </Slider>
+                    </div>
+                    <div className="product-detail-container">
+                        <div>
+                            <h3 className="product-detail">Name:  Chair</h3>
+                        </div>
+                        <div>
+                            <h3 className="product-detail">Price:  12$</h3>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 className="product-detail">Category:  Hall</h3>
+                        </div>
+                    <div className="product-button-container">
+                        <div>
+                            <button className="product-button">Know more</button>
+                        </div>
+                        <div>
+                            <button className="product-button">Buy now</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
+                <div className="slider-card">
+                    <div className="slider-card-content"> 
+                        <Slider {...settings}>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                        </Slider>
+                    </div>
+                    <div className="product-detail-container">
+                        <div>
+                            <h3 className="product-detail">Name:  Chair</h3>
+                        </div>
+                        <div>
+                            <h3 className="product-detail">Price:  12$</h3>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 className="product-detail">Category:  Hall</h3>
+                        </div>
+                    <div className="product-button-container">
+                        <div>
+                            <button className="product-button">Know more</button>
+                        </div>
+                        <div>
+                            <button className="product-button">Buy now</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
+                <div className="slider-card">
+                    <div className="slider-card-content"> 
+                        <Slider {...settings}>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                        </Slider>
+                    </div>
+                    <div className="product-detail-container">
+                        <div>
+                            <h3 className="product-detail">Name:  Chair</h3>
+                        </div>
+                        <div>
+                            <h3 className="product-detail">Price:  12$</h3>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 className="product-detail">Category:  Hall</h3>
+                        </div>
+                    <div className="product-button-container">
+                        <div>
+                            <button className="product-button">Know more</button>
+                        </div>
+                        <div>
+                            <button className="product-button">Buy now</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
+                <div className="slider-card">
+                    <div className="slider-card-content"> 
+                        <Slider {...settings}>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                        </Slider>
+                    </div>
+                    <div className="product-detail-container">
+                        <div>
+                            <h3 className="product-detail">Name:  Chair</h3>
+                        </div>
+                        <div>
+                            <h3 className="product-detail">Price:  12$</h3>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 className="product-detail">Category:  Hall</h3>
+                        </div>
+                    <div className="product-button-container">
+                        <div>
+                            <button className="product-button">Know more</button>
+                        </div>
+                        <div>
+                            <button className="product-button">Buy now</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
+                <div className="slider-card">
+                    <div className="slider-card-content"> 
+                        <Slider {...settings}>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                        </Slider>
+                    </div>
+                    <div className="product-detail-container">
+                        <div>
+                            <h3 className="product-detail">Name:  Chair</h3>
+                        </div>
+                        <div>
+                            <h3 className="product-detail">Price:  12$</h3>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 className="product-detail">Category:  Hall</h3>
+                        </div>
+                    <div className="product-button-container">
+                        <div>
+                            <button className="product-button">Know more</button>
+                        </div>
+                        <div>
+                            <button className="product-button">Buy now</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
+                <div className="slider-card">
+                    <div className="slider-card-content"> 
+                        <Slider {...settings}>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                        </Slider>
+                    </div>
+                    <div className="product-detail-container">
+                        <div>
+                            <h3 className="product-detail">Name:  Chair</h3>
+                        </div>
+                        <div>
+                            <h3 className="product-detail">Price:  12$</h3>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 className="product-detail">Category:  Hall</h3>
+                        </div>
+                    <div className="product-button-container">
+                        <div>
+                            <button className="product-button">Know more</button>
+                        </div>
+                        <div>
+                            <button className="product-button">Buy now</button>
+                        </div>
+                    </div>
                 </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
-                </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
-                </div>
-                <div className="category-image-container">
-                    <img className="category-image" src={Category} alt="Category" />
+                <div className="slider-card">
+                    <div className="slider-card-content"> 
+                        <Slider {...settings}>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                            <div className="category-image-container">
+                                <img className="category-image" src={Category} alt="Category" />
+                            </div>
+                        </Slider>
+                    </div>
+                    <div className="product-detail-container">
+                        <div>
+                            <h3 className="product-detail">Name:  Chair</h3>
+                        </div>
+                        <div>
+                            <h3 className="product-detail">Price:  12$</h3>
+                        </div>
+                    </div>
+                        <div>
+                            <h3 className="product-detail">Category:  Hall</h3>
+                        </div>
+                    <div className="product-button-container">
+                        <div>
+                            <button className="product-button">Know more</button>
+                        </div>
+                        <div>
+                            <button className="product-button">Buy now</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
