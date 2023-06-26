@@ -10,7 +10,7 @@ function App() {
         {/* <Individual /> */}
         <Home />
         {/* <Seller /> */}
-        {/* <Auth /> */}
+        <Auth />
     </div>
   );
 }

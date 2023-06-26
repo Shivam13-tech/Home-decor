@@ -1,7 +1,10 @@
 import React, {useState} from "react";
+import {authenticate, authenticate2} from '../Actions'
+import {useDispatch} from 'react-redux'
 import axios from 'axios';
 
 function Auth(){
+    const dispatch = useDispatch()
     const signupURL = 'http://127.0.0.1:8000/api/auth/signup'
     const loginURL = 'http://127.0.0.1:8000/api/auth/login'
 
@@ -36,10 +39,12 @@ function Auth(){
         axios.post(signupURL,signupdata)
         .then(function(response){
             console.log(response)
+            dispatch(authenticate(response.data.Token))
         }).catch(error => {
             console.log(error)
         })
         Setsignupdata({
+            name: '',
             email: '',
             password: '',
             confirmPassword: ''
