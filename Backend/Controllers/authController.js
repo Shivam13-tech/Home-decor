@@ -90,7 +90,7 @@ exports.protect = async function(req,res,next){
             token = req.headers.authorization.split(' ')[1]
         }
         if(!token){
-            res.status(401).json({
+            return res.status(401).json({
                 status: "Failed",
                 Message: "Please provide valid email and password"
             })
@@ -98,7 +98,7 @@ exports.protect = async function(req,res,next){
         const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
         const currentUser = await User.findById(decoded.id)
         if(!currentUser){
-            res.status(401).json({
+            return res.status(401).json({
                 status: "Failed",
                 Message: "The user no longer exist"
             })

@@ -12,7 +12,11 @@ const sellerSchema = new mongoose.Schema({            // Name, price,description
     },
     description: {
         type: String,
-        required: [true, "Please provide description of the project"]
+        required: [true, "Please provide description of the product"]
+    },
+    category:{
+        type: String,
+        required: [true, "Please provide category of the product"]
     },
     images: {
         type: [String],

@@ -1,14 +1,22 @@
 import React, {useState} from "react";
 import axios from 'axios';
+
+import { useSelector } from "react-redux";
+
 import individualChair from "../Assets/individual chair.jpg"
 
 function Seller(){
+
+    const auth = useSelector(function(state){
+        return state.auth
+    })
 
     const addProductURL = 'http://127.0.0.1:8000/api/seller'
     const [productdetail, Setproductdetail] = useState({
         name: '',
         price: '',
-        description: ''
+        description: '',
+        category: 'Select'
     })
     const [productimages, Setproductimages] = useState([])
     const [error, setError] = useState('');
@@ -40,6 +48,7 @@ function Seller(){
         formdata.append('name', productdetail.name)
         formdata.append('price', productdetail.price)
         formdata.append('description', productdetail.description)
+        formdata.append('category', productdetail.category)
         productimages.forEach((image) => {
             formdata.append('images', image)
         })
@@ -47,14 +56,17 @@ function Seller(){
         axios.post(addProductURL,formdata, {
             headers: {
               'Content-Type': 'multipart/form-data',
+              'Authorization': `Bearer ${auth}`
             },
           })
         .then(function(response){
+            console.log(formdata)
             console.log(response)
             Setproductdetail({
                 name: '',
                 price: '',
-                description: ''
+                description: '',
+                category: 'Select'
             })
             Setproductimages([])
             document.getElementById('files').value = '';
@@ -64,7 +76,7 @@ function Seller(){
     }
 
     return (
-        <> 
+        <>
         <div className="Seller">
             <div>
                 <div>
@@ -79,6 +91,15 @@ function Seller(){
                         <input name="price" type="text" className="add-product-input" value={productdetail.price} onChange={handleforminput}/>
                         <label htmlFor="Productdesc" className="add-product-label">Product description:</label>
                         <textarea name="description" id="Productdesc" className="add-product-input" value={productdetail.description} onChange={handleforminput}></textarea>
+                        <label htmlFor="type" className="form-label">Choose product category</label>
+                        <select name="category" className="form-dropdown" value={productdetail.category} onChange={handleforminput}>
+                            <option value="Select">Select</option>
+                            <option value="Hall">Hall</option>
+                            <option value="Kitchen">Kitchen</option>
+                            <option value="Balcony">Balcony</option>
+                            <option value="Bathroom">Bathroom</option>
+                            <option value="Bedroom">Bedroom</option>
+                        </select>
                         <label htmlFor="files" className="add-product-label">Select images to upload:</label>
                         <input type="file" id="files" name="files" multiple style={{marginTop: "1vh"}} onChange={handleImageChange}/>
                         {error && <p>{error}</p>}
