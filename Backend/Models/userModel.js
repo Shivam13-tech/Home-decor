@@ -29,6 +29,10 @@ const userSchema = new mongoose.Schema({
             },
             message: 'Passwords are not the same!'
           }
+    },
+    type:{
+        type: String,
+        required: [true, 'Please provide account type']
     }
 })
 

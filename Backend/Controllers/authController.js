@@ -35,6 +35,7 @@ exports.signup = async function(req,res,next){
             email: req.body.email,
             password: req.body.password,
             confirmPassword: req.body.confirmPassword,
+            type: req.body.type
         })
         createSendToken(newUser,201,res)
     }
@@ -44,32 +45,41 @@ exports.signup = async function(req,res,next){
             .status(404)
             .json({
                 status: "Failed",
-                Message: "Something went wrong"
+                data: err
             })
     }
 }
 
 exports.login = async function(req,res,next){
     const {email, password} = req.body
-
-    // 1) Check if email and password exist
-    if(!email || !password){
-        res.status(401).json({
-            status: "Failed",
-            Message: "Please provide email and password"
-        })
-    }
-    // 2) Find the user and get hidden password also
-    const user = await User.findOne({email}).select('+password')
-
-    // 3) Check if the user exist and the password provided is correct
-    if(!user || !(await bcrypt.compare(password, user.password))){
-        res.status(401).json({
-            status: "Failed",
-            Message: "Please provide valid email and password"
-        })
-    } else {
-        createSendToken(user,200,res)
+    try {
+        // 1) Check if email and password exist
+        if(!email || !password){
+           return res.status(401).json({
+                status: "Failed",
+                Message: "Please provide email and password"
+            })
+        }
+        // 2) Find the user and get hidden password also
+        const user = await User.findOne({email}).select('+password')
+    
+        // 3) Check if the user exist and the password provided is correct
+        if(!user || !(await bcrypt.compare(password, user.password))){
+           return res.status(401).json({
+                status: "Failed",
+                Message: "Please provide valid email and password"
+            })
+        } else {
+            createSendToken(user,200,res)
+        }
+    } catch(err){
+        console.log(err)
+        res
+            .status(404)
+            .json({
+                status: "Failed",
+                data: err
+            })
     }
 }
 

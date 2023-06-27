@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {authenticate, authenticate2} from '../Actions'
+import {authenticate} from '../Actions'
 import {useDispatch} from 'react-redux'
 import axios from 'axios';
 
@@ -9,16 +9,21 @@ function Auth(){
     const loginURL = 'http://127.0.0.1:8000/api/auth/login'
 
     const [login, setLogin] = useState(false)
+
     const [signupdata, Setsignupdata] = useState({
         name: '',
         email: '',
         password: '',
-        confirmPassword: ''
+        confirmPassword: '',
+        type: 'Select'
     })
+
     const [logindata, Setlogindata] = useState({
         email: '',
         password: ''
     })
+
+    const [authError, setAuthError] = useState('')
 
     function handlesignupinput(event){
         Setsignupdata({
@@ -40,15 +45,19 @@ function Auth(){
         .then(function(response){
             console.log(response)
             dispatch(authenticate(response.data.Token))
+            Setsignupdata({
+                name: '',
+                email: '',
+                password: '',
+                confirmPassword: '',
+                type: 'Select'
+            })
+            setAuthError('')
         }).catch(error => {
-            console.log(error)
+            setAuthError(error.response.data.data.message)
+            console.log(error.response.data.data.message)
         })
-        Setsignupdata({
-            name: '',
-            email: '',
-            password: '',
-            confirmPassword: ''
-        })
+        
     }
 
     function loginformsubmit(event){
@@ -56,7 +65,10 @@ function Auth(){
         axios.post(loginURL,logindata)
         .then(function(response){
             console.log(response)
+            dispatch(authenticate(response.data.Token))
+            setAuthError('')
         }).catch(error => {
+            setAuthError(error.response.data.Message)
             console.log(error)
         })
         Setlogindata({
@@ -73,6 +85,7 @@ function Auth(){
                     <button className="form-action-button" onClick={() => setLogin(true)}>Login</button>
                     <button className="form-action-button" onClick={() => setLogin(false)}>Sign up</button>
                 </div>
+                <p style={{color: "red"}}>{authError}</p>
                 { !login ? (
                 <div className="form-design">
                     <label className="form-label" htmlFor="signup-name">Enter name:</label>
@@ -84,7 +97,7 @@ function Auth(){
                     <label className="form-label" htmlFor="signup-passconf">Confirm password:</label>
                     <input className="form-input" type="password" name="confirmPassword" value={signupdata.confirmPassword} onChange={handlesignupinput}/>
                     <label htmlFor="type" className="form-label">Choose your account type</label>
-                    <select name="type" className="form-dropdown">
+                    <select name="type" className="form-dropdown" value={signupdata.type} onChange={handlesignupinput}>
                         <option value="Select">Select</option>
                         <option value="Buyer">Buyer</option>
                         <option value="Seller">Seller</option>

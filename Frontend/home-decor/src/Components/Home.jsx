@@ -8,8 +8,6 @@ import Category from "../Assets/individual chair.jpg"
 import { useSelector } from "react-redux";
 
 function Home(){
-
-
     const auth = useSelector(function(state){
         return state.auth
     })
@@ -24,8 +22,8 @@ function Home(){
 
     return(
     <>
-        <h1>{auth}</h1>
-        {/* <div className="home-wallpaper-container">
+        {/* <h1>{auth}</h1> */}
+        <div className="home-wallpaper-container">
             <div className="text-overlay">
                 <h1>DreamSpace</h1>
                 <p>We offer a wide range of stylish and high-quality products to enhance the beauty and ambiance of your living spaces.</p>
@@ -281,7 +279,7 @@ function Home(){
                     </div>
                 </div>
             </div>
-        </div> */}
+        </div>
     </>
     )
 }
