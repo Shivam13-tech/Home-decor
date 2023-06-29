@@ -385,6 +385,89 @@ body{
     margin-top: 1vh;
 }
 
+
+/* ----------------- Navigation ------------ */
+
+
+
+.navigation-subcontainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(236,231,227,255);
+    list-style: none;
+}
+
+.navigation-button{
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+  border: none;
+  color: #000; 
+  font-size: 16px;
+  cursor: pointer;
+  margin: 2vh;
+}
+
+.login-signup {
+    margin-left: auto;
+}
+
+
+.seller-main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.seller-main-image-container{
+    width: 50vw;
+    height: 50vh;
+    border-radius: 7%; 
+    overflow: hidden;
+    margin: 3vh
+}
+
+.seller-main-image{
+    width: 100%;
+    height: 100%;
+}
+
+.seller-title{
+    font-family: 'Montserrat', sans-serif;
+    margin: 2vh;
+}
+
+.seller-image-container{
+    width: 15vw;
+    height: 20vh;
+    border: 3%;
+}
+
+.seller-image{
+    width: 100%;
+    height: 100%;
+}
+
+.all-seller{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh;
+}
+
+.seller-name{
+    font-family: 'Montserrat', sans-serif;
+    margin: 1vh;
+}
+
+.seller-detail{
+    width: 50vw;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
 /* ------------------------- Mobile responsive ---------- */
 
 @media (max-width: 1100px) {
@@ -484,5 +567,30 @@ body{
 
     .home-select-title{
         margin-right: 8vw;
+    }
+
+    /* ------- Seller ---- */
+
+    .seller-detail{
+        width: 60vw;
+        margin-left: 2vw;
+    }
+
+    .seller-image-container{
+       width: 25vw; 
+       height: 16vh;
+    }
+
+    .seller-main-container{
+        flex-direction: column;
+    }
+
+    .seller-main-image-container{
+        width: 90vw;
+        height: 40vh;
+    }
+
+    .seller-title{
+       text-align: center;
     }
   }
