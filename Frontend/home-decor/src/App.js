@@ -3,6 +3,7 @@ import Navigation from './Components/Navigation';
 import Individual from './Components/Individual';
 import Home from './Components/Home'
 import Sellerdata from './Components/Sellerdata';
+import About from './Components/About';
 import Seller from './Components/Seller';
 import Auth from './Components/Auth';
 
@@ -11,7 +12,8 @@ function App() {
     <div className="App">
         {/* <Individual /> */}
         <Navigation />
-        <Sellerdata />
+        <About />
+        {/* <Sellerdata /> */}
         {/* <Home /> */}
         {/* <Seller />
         <Auth /> */}

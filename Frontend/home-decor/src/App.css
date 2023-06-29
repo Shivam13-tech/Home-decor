@@ -413,6 +413,8 @@ body{
     margin-left: auto;
 }
 
+/* ----------------- Seller ------------ */
+
 
 .seller-main-container{
     display: flex;
@@ -465,6 +467,29 @@ body{
 .seller-detail{
     width: 50vw;
     font-family: 'Montserrat', sans-serif;
+}
+
+/* ----------------- About ------------ */
+
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2vh;
+}
+
+.about-us{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: larger;
+    width: 50vw;
+    margin: 1vh;
+}
+
+.break{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
 }
 
 
