@@ -2,8 +2,13 @@ import React, {useState} from "react";
 import {authenticate} from '../Actions'
 import {useDispatch} from 'react-redux'
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
+
 
 function Auth(){
+
+    const navigate = useNavigate();
     const dispatch = useDispatch()
     const signupURL = 'http://127.0.0.1:8000/api/auth/signup'
     const loginURL = 'http://127.0.0.1:8000/api/auth/login'
@@ -67,6 +72,11 @@ function Auth(){
             console.log(response)
             dispatch(authenticate(response.data.Token))
             setAuthError('')
+            if (response.data.Data.Info.type === 'Seller') {
+                navigate('/Sellerportal');
+              } else {
+                navigate('/');
+              }
         }).catch(error => {
             setAuthError(error.response.data.Message)
             console.log(error)

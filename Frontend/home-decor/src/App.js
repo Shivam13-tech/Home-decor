@@ -1,6 +1,6 @@
 import './App.css';
+import {Routes, Route} from 'react-router-dom'
 import Navigation from './Components/Navigation';
-import Individual from './Components/Individual';
 import Home from './Components/Home'
 import Sellerdata from './Components/Sellerdata';
 import About from './Components/About';
@@ -10,13 +10,15 @@ import Auth from './Components/Auth';
 function App() {
   return (
     <div className="App">
-        {/* <Individual /> */}
-        <Navigation />
-        <About />
-        {/* <Sellerdata /> */}
-        {/* <Home /> */}
-        {/* <Seller />
-        <Auth /> */}
+      <Navigation />
+      <Routes>
+        <Route path='/' element={ <Home />} />
+        <Route path='/Seller' element={<Sellerdata />} />
+        <Route path='/About' element={<About />} />
+        <Route path='/Auth' element={<Auth />} />
+        <Route path='/Sellerportal' element={<Seller />} />
+        <Route path='*' element={<Home />} />
+      </Routes>
     </div>
   );
 }
