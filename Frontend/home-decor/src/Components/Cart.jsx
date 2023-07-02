@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import {removeFromCart} from '../Actions'
+import { useSelector, useDispatch } from 'react-redux';
+import { removeFromCart } from '../Actions/index';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -28,15 +27,14 @@ function Cart() {
     }));
   };
 
-  const handleRemove = (productId) => {
-    dispatch(removeFromCart(productId));
+  const handleRemove = (productid) => {
+    dispatch(removeFromCart(productid));
   };
 
   return (
-    <div>
-      <h2>Cart</h2>
+    <div className='cart-comp'>
       {cartItems.map((product) => (
-      <div className="slider-card">
+      <div className="slider-card" id={product._id}>
                     <div className="slider-card-content"> 
                         <Slider {...settings}>
                             <div className="category-image-container">
@@ -70,10 +68,11 @@ function Cart() {
                             <button className="product-button" onClick={() => toggleDescription(product._id)}>{description[product._id] ? 'Know less' : 'Know more'}</button>
                         </div>
                         <div>
-                            <button className="product-button" onClick={() => handleRemove(product.id)}>Remove</button>
+                            <button className="product-button" onClick={() => handleRemove(product._id)}>Remove</button>
                         </div>
                     </div>
-                </div> ))}
+                </div>
+             ))}
     </div>
   );
 }
