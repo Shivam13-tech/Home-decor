@@ -413,6 +413,16 @@ body{
     margin-left: auto;
 }
 
+.cart-icon{
+    width: 1vw;
+    height: 2vh;
+    padding-right: 3vw;
+}
+
+.cart-no{
+    padding-left: 1vw;
+}
+
 /* ----------------- Seller ------------ */
 
 
@@ -617,5 +627,17 @@ body{
 
     .seller-title{
        text-align: center;
+    }
+
+    /* ------------- Navigation --------- */
+
+    .cart-icon{
+        padding-right: 10vw;
+        width: 4vw;
+        height: 1.5vh;
+    }
+
+    .cart-no{
+        padding-left: 4vw;
     }
   }

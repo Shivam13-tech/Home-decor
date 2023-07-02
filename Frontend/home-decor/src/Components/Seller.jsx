@@ -80,33 +80,18 @@ function Seller(){
     }
 
     const [products, Setproducts] = useState([])
-    // useEffect(()=>{
-    //  axios.get(getProductURL,{
-    //     headers: {
-    //         'Authorization': `Bearer ${auth}`
-    //     }
-    // }).then(function(response){
-    //     console.log(response)
-    //     Setproducts(response.data.Result)
-    // }).catch(error => {
-    //     console.log(error)
-    // })
-    // console.log(products, "products") 
-    // },[])
-
-    
-    function gettingdata(){
-        axios.get(getProductURL,{
-                    headers: {
-                        'Authorization': `Bearer ${auth}`
-                    }
-                }).then(function(response){
-                    console.log(response)
-                    Setproducts(response.data.Result)
-                }).catch(error => {
-                    console.log(error)
-                })
-    }
+   useEffect(() => {
+    axios.get(getProductURL,{
+        headers: {
+            'Authorization': `Bearer ${auth}`
+        }
+    }).then(function(response){
+        console.log(response)
+        Setproducts(response.data.Result)
+    }).catch(error => {
+        console.log(error)
+    })
+   },[])
 
     function deletproduct(productID){
         let id = productID.split("seller")
@@ -116,7 +101,7 @@ function Seller(){
             }
         }).then(function(response){
             console.log(response)
-            gettingdata()
+            window.location.reload();
         }).catch(error => {
             console.log(error)
         })
@@ -128,7 +113,6 @@ function Seller(){
             <div>
                 <div>
                     <h2 className="Seller-title">Hello Seller</h2>
-                    <button onClick={gettingdata}>Click</button>
                 </div>
                 <h4 className="Seller-title">Add product:</h4>
                 <div className="product-box">

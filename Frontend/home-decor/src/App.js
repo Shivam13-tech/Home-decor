@@ -6,6 +6,7 @@ import Sellerdata from './Components/Sellerdata';
 import About from './Components/About';
 import Seller from './Components/Seller';
 import Auth from './Components/Auth';
+import Cart from './Components/Cart';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path='/About' element={<About />} />
         <Route path='/Auth' element={<Auth />} />
         <Route path='/Sellerportal' element={<Seller />} />
+        <Route path='/Cart' element={<Cart />} />
         <Route path='*' element={<Home />} />
       </Routes>
     </div>
