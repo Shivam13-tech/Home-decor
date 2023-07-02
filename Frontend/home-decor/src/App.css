@@ -6,7 +6,7 @@
   @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Josefin+Sans:ital,wght@0,300;0,500;1,700&family=Montserrat:ital,wght@1,300&display=swap');
 
 body{
-    background-color: #c8ded0;
+    background-color: rgba(236,231,227,255);;
 }
 
 .Single-product{
@@ -235,7 +235,7 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    background-color: #c8ded0;
+    background-color: none;
     margin-left: 5vw;
     margin-top: 3vh;
 }
@@ -257,7 +257,7 @@ body{
     height: 5vh;
     border: none;
 	border-radius: 30px;
-    background-color: #f0f8ff;
+    background-color: #c8ded0;
     margin-top: 1vh;
     padding-left: 17px;
 }
@@ -320,7 +320,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #c8ded0;  
 }
 
 .form-design{
@@ -340,7 +339,7 @@ body{
     height: 5vh;
     border: none;
 	border-radius: 30px;
-    background-color: #f0f8ff;
+    background-color: #c8ded0;
     margin-top: 1vh;
     margin-bottom: 1vh;
     padding-left: 17px;
