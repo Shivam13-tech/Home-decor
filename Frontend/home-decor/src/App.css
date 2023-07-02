@@ -510,6 +510,41 @@ body{
     flex-wrap: wrap;
 }
 
+
+/* ------------------ Footer ------------- */
+
+.footer-main{
+    margin-top: 5vh;
+    height: 35vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer-data{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: large;
+    width: 50vw;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.footer-title{
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.footer-link{
+   list-style: none;
+}
+
+.footer-contact{
+    margin-top: 1vh;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
 /* ------------------------- Mobile responsive ---------- */
 
 @media (max-width: 1100px) {
