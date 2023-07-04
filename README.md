@@ -1,8 +1,6 @@
 # Dreamspace - Home Decor Web Application
 
-Dreamspace is a home decor web application built using the MERN stack (MongoDB, Express, React, Node.js).
-It provides users with a platform to explore and purchase home decor products.
-The application features token-based authentication using JSON Web Tokens (JWT), Redux for state management, and Multer for product image uploads.
+Dreamspace is a responsive home decor web application built using the MERN stack (MongoDB, Express, React, Node.js). It provides users with a platform to explore and purchase home decor products.
 
 ## Features
 
@@ -15,6 +13,10 @@ The application features token-based authentication using JSON Web Tokens (JWT),
 - **Cart Management**: Buyers can add products to their cart and manage them, providing a seamless shopping experience.
 
 - **Token-Based Authentication**: The application implements token-based authentication using JSON Web Tokens (JWT) to ensure secure and authorized access to protected routes.
+
+- **React Router**: The application utilizes React Router for client-side routing, enabling seamless navigation between different pages. The routing configuration ensures that users can switch between various sections of the application, such as the home page, product categories, cart, and seller portal, without requiring a full page reload.
+
+- **Mobile Responsiveness**: Dreamspace is designed to be fully responsive, adapting its layout and content to provide an optimal user experience across different screen sizes and devices. Whether users access the application on desktops, tablets, or mobile phones, they can enjoy a seamless and intuitive browsing and purchasing experience.
 
 ## Installation
 
